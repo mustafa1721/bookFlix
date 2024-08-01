@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="heading" id="heading">
+            <h1><img src="../public/8f8f21f1ba4ad3a50e26c7911f77784a.png" alt="bookflix-font" border="0"></h1>
+        </div>
+            
+    </header>
+    <div class="container">
+        
+            <h1 class="c-header">Sign Up</h1>
+        
+        <div>
+            <form action="/signup" method="POST">
+                <div>
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit" id="submit">SignUp</button>
+                </div>
+            </form>
+            <div>
+                <p style="color: rgb(175, 175, 175);">
+                    already a user? <a href="/login">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Bookflix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

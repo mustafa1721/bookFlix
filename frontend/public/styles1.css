@@ -1,0 +1,332 @@
+/* Reset default browser styles */
+body,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Basic body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #7c7c7c;
+    color: #ffffff;
+    animation: fadeInPage 1s ease-out;
+}
+
+/* Header styling */
+.heading {
+    color: rgb(226, 0, 0);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    max-width: 100%;
+    opacity: 0;
+    animation: fadeInHeader 1.5s ease-out forwards;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    animation: fadeInText 2s ease-out forwards;
+}
+
+/* Menu icon styling */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Navigation menu styling for desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+    animation: fadeInLinks 1.5s ease-out forwards;
+}
+
+.nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#logoutbtn {
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    background-color: #ffffff00;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#logoutbtn:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/* Close button styling */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    display: none; /* Hidden by default */
+}
+
+.close-menu:hover {
+    color: red;
+}
+
+/* Show menu icon on mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        font-size: 2em;
+        padding-left: 60px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        position: fixed;
+        top: 35px;
+        left: 10px;
+        z-index: 1001;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .close-menu {
+        display: block; /* Show close button on mobile */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu ul li {
+        margin: 5px;
+        padding: 20px;
+    }
+}
+
+/* Show menu slider on active */
+.nav-menu.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1f1f1f;
+    /* backdrop-filter: blur(10px); */
+    overflow: auto;
+    z-index: 9999;
+}
+
+/* Footer styling */
+.footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive design for very small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+        padding-left: 50px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+
+    .footer p {
+        font-size: 0.9em;
+    }
+}
+
+/* Animation for fading in the entire page */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for fading in the header */
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        transform: translateY(-210px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for fading in header text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLinks {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px;
+    overflow: hidden; /* Ensure no overflow */
+    height: calc(100vh - 140px); /* Adjust height to fit in viewport considering header and footer */
+}
+
+.card {
+    background-color: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+    transition: transform 0.2s;
+    width: 300px;
+    flex: 1 0 21%; /* Adjust flex basis to fit 5 cards per row */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-bottom: 2px solid #ff0000;
+}
+
+.card-text {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-text h3 {
+    margin-bottom: 10px;
+}
+
+.card-text p {
+    margin-bottom: 20px;
+}
+
+.read-button {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.read-button:hover {
+    background-color: #cc0000;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
